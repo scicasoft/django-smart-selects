@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="django-smart-selects",
-    version="1.5.9",
+    version="1.5.10",
     description="Django application to handle chained model fields.",
     long_description=long_desc,
     long_description_content_type="text/markdown",

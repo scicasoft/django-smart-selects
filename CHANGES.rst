@@ -1,6 +1,21 @@
 Changes
 =======
 
+1.5.10 (2021-01-29)
+-------------------
+
+- Add release config
+  [jezdez]
+- Move to tox
+  [jezdez]
+- Fix code style as reported by Black
+  [jezdez]
+- Docs: elaborate usage within templates
+  [amiroff]
+- Ensure at least one option in the <select> element (as required in HTML)
+  [d9pouces]
+
+
 1.5.9 (2020-08-28)
 ------------------
 
