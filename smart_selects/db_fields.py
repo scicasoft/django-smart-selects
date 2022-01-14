@@ -234,7 +234,7 @@ class ChainedForeignKey(IntrospectiveFieldMixin, ForeignKey):
         foreign_key_field_name = self.name
         defaults = {
             'form_class': form_fields.ChainedModelChoiceField,
-            'queryset': self.remote_field.to._default_manager.complex_filter(
+            'queryset': self.remote_field.model._default_manager.complex_filter(
                 self.remote_field.limit_choices_to),
             'to_field_name': self.remote_field.field_name,
             'to_app_name': self.to_app_name,
@@ -280,9 +280,9 @@ class GroupedForeignKey(ForeignKey):
     def formfield(self, **kwargs):
         defaults = {
             'form_class': form_fields.GroupedModelSelect,
-            'queryset': self.rel.to._default_manager.complex_filter(
-                self.rel.limit_choices_to),
-            'to_field_name': self.rel.field_name,
+            'queryset': self.remote_field.model._default_manager.complex_filter(
+                self.remote_field.limit_choices_to),
+            'to_field_name': self.remote_field.field_name,
             'order_field': self.group_field,
         }
         defaults.update(kwargs)
